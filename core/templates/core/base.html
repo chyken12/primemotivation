@@ -1,0 +1,435 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+
+<!-- Mirrored from demo.w3layouts.com/demos_new/template_demo/12-04-2018/weblog-demo_Free/158935800/web/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 01 Jun 2022 06:07:15 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+
+<head>
+    <title>Prime Motivation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="" />
+
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <link href="{% static 'css/bootstrap.css' %}" rel='stylesheet' type='text/css' />
+    <link href="{% static 'css/single.css' %}" rel='stylesheet' type='text/css' />
+    <link href="{% static 'css/style.css' %}" rel='stylesheet' type='text/css' />
+    <link href="{% static 'css/fontawesome-all.css' %}" rel="stylesheet">
+    <link
+        href="http://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
+        rel="stylesheet">
+    <link href="{% static 'images/favicon.png' %}" rel="icon">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+
+
+
+
+    <body>
+        <!-- New toolbar-->
+        <style>
+            * {
+                box-sizing: border-box;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            }
+
+
+            #w3lDemoBar.w3l-demo-bar {
+                top: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 9999;
+                padding: 40px 5px;
+                padding-top: 70px;
+                margin-bottom: 70px;
+                background: #0D1326;
+                border-top-left-radius: 9px;
+                border-bottom-left-radius: 9px;
+            }
+
+            #w3lDemoBar.w3l-demo-bar a {
+                display: block;
+                color: #e6ebff;
+                text-decoration: none;
+                line-height: 24px;
+                opacity: .6;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            #w3lDemoBar.w3l-demo-bar span.w3l-icon {
+                display: block;
+            }
+
+            #w3lDemoBar.w3l-demo-bar a:hover {
+                opacity: 1;
+            }
+
+            #w3lDemoBar.w3l-demo-bar .w3l-icon svg {
+                color: #e6ebff;
+            }
+
+            #w3lDemoBar.w3l-demo-bar .responsive-icons {
+                margin-top: 30px;
+                border-top: 1px solid #41414d;
+                padding-top: 40px;
+            }
+
+            #w3lDemoBar.w3l-demo-bar .demo-btns {
+                border-top: 1px solid #41414d;
+                padding-top: 30px;
+            }
+
+            #w3lDemoBar.w3l-demo-bar .responsive-icons a span.fa {
+                font-size: 26px;
+            }
+
+            #w3lDemoBar.w3l-demo-bar .no-margin-bottom {
+                margin-bottom: 0;
+            }
+
+            .toggle-right-sidebar span {
+                background: #0D1326;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                color: #e6ebff;
+                border-radius: 50px;
+                font-size: 26px;
+                cursor: pointer;
+                opacity: .5;
+            }
+
+            .pull-right {
+                float: right;
+                position: fixed;
+                right: 0px;
+                top: 70px;
+                width: 90px;
+                z-index: 99999;
+                text-align: center;
+            }
+
+            /* ============================================================
+RIGHT SIDEBAR SECTION
+============================================================ */
+
+            #right-sidebar {
+                width: 90px;
+                position: fixed;
+                height: 100%;
+                z-index: 1000;
+                right: 0px;
+                top: 0;
+                margin-top: 60px;
+                -webkit-transition: all .5s ease-in-out;
+                -moz-transition: all .5s ease-in-out;
+                -o-transition: all .5s ease-in-out;
+                transition: all .5s ease-in-out;
+                overflow-y: auto;
+            }
+
+
+            /* ============================================================
+RIGHT SIDEBAR TOGGLE SECTION
+============================================================ */
+
+            .hide-right-bar-notifications {
+                margin-right: -300px !important;
+                -webkit-transition: all .3s ease-in-out;
+                -moz-transition: all .3s ease-in-out;
+                -o-transition: all .3s ease-in-out;
+                transition: all .3s ease-in-out;
+            }
+
+
+
+            @media (max-width: 992px) {
+                #w3lDemoBar.w3l-demo-bar a.desktop-mode {
+                    display: none;
+
+                }
+            }
+
+            @media (max-width: 767px) {
+                #w3lDemoBar.w3l-demo-bar a.tablet-mode {
+                    display: none;
+
+                }
+            }
+
+            @media (max-width: 568px) {
+                #w3lDemoBar.w3l-demo-bar a.mobile-mode {
+                    display: none;
+                }
+
+                #w3lDemoBar.w3l-demo-bar .responsive-icons {
+                    margin-top: 0px;
+                    border-top: none;
+                    padding-top: 0px;
+                }
+
+                #right-sidebar,
+                .pull-right {
+                    width: 90px;
+                }
+
+                #w3lDemoBar.w3l-demo-bar .no-margin-bottom-mobile {
+                    margin-bottom: 0;
+                }
+            }
+        </style>
+        <!-- <div class="pull-right toggle-right-sidebar">
+<span class="fa title-open-right-sidebar tooltipstered fa-angle-double-right"></span>
+</div> -->
+
+        <div id="right-sidebar" class="right-sidebar-notifcations nav-collapse">
+            <div class="bs-example bs-example-tabs right-sidebar-tab-notification" data-example-id="togglable-tabs">
+                <!---<div class="responsive-icons">
+            <a href="#url" class="desktop-mode">
+                <span class="w3l-icon -desktop">
+                    <span class="fa fa-desktop"></span>
+                </span>
+            </a>
+            <a href="#url" class="tablet-mode">
+                <span class="w3l-icon -tablet">
+                    <span class="fa fa-tablet"></span>
+                </span>
+            </a>
+            <a href="#url" class="mobile-mode no-margin-bottom">
+                <span class="w3l-icon -mobile">
+                    <span class="fa fa-mobile"></span>
+                </span>
+            </a>
+        </div>-->
+            </div>
+            <div class="right-sidebar-panel-content animated fadeInRight" tabindex="5003"
+                style="overflow: hidden; outline: none;">
+            </div>
+        </div>
+        </div>
+        </div>
+
+        <!--Header-->
+
+        <header>
+            <div class="top-bar_sub_w3layouts container-fluid">
+                <div class="row">
+                    <div class="col-md-4 logo text-left">
+                        <a class="navbar-brand" href="index.html">
+                            <i class="fab fa-linode"></i>Prime Motivation</a>
+                    </div>
+                    <div class="col-md-4 top-forms text-center mt-lg-3 mt-md-1 mt-0">
+                        <span>Welcome Back!</span>
+                    </div>
+                    <div class="col-md-4 log-icons text-right">
+
+                        <ul class="social_list1 mt-3">
+
+                            <li>
+                                <a href="#" class="facebook1 mx-2">
+                                    <i class="fab fa-facebook-f"></i>
+
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="twitter2">
+                                    <i class="fab fa-twitter"></i>
+
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="dribble3 mx-2">
+                                    <i class="fab fa-dribbble"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="pin">
+                                    <i class="fab fa-pinterest-p"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header_top" id="home">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <button class="navbar-toggler navbar-toggler-right mx-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'index' %}">Home
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{% url 'about' %}">About</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Categories
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    {% for category in category_list %}
+                                    <a class="dropdown-item" href="{{ category.get_absolute_url }}">
+                                        {{ category.name }}
+                                    </a>
+                                    {% endfor %}
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                            </li>
+
+                        </ul>
+                        <form action="#" method="post" class="form-inline my-2 my-lg-0 header-search">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search here..." name="Search"
+                                required="">
+                            <button class="btn btn1 my-2 my-sm-0" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </form>
+                    </div>
+                </nav>
+
+            </div>
+        </header>
+        <!--//header-->
+
+        <!--/banner-->
+        <div class="banner-inner">
+        </div>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="{% url 'index' %}"> Home </a>
+            </li>
+        </ol>
+        {% block content %}
+
+        {% endblock %}
+        <!--footer-->
+        <footer>
+            
+                <!-- footer -->
+                <div class="footer-cpy text-center">
+                    <div class="footer-social">
+                        <div class="copyrighttop">
+                            <ul>
+                                <li class="mx-3">
+                                    <a class="facebook" href="#">
+                                        <i class="fab fa-facebook-f"></i>
+                                        <span>Facebook</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="facebook" href="#">
+                                        <i class="fab fa-twitter"></i>
+                                        <span>Twitter</span>
+                                    </a>
+                                </li>
+                                <li class="mx-3">
+                                    <a class="facebook" href="#">
+                                        <i class="fab fa-google-plus-g"></i>
+                                        <span>Google+</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="facebook" href="#">
+                                        <i class="fab fa-pinterest-p"></i>
+                                        <span>Pinterest</span>
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="#">
+                        <p>© PrimeMotivation. All Rights Reserved | Design by
+                            <a href="#">samsarp</a>
+                        </p>
+
+                    </div>
+                </div>
+
+                <!-- //footer -->
+            </div>
+        </footer>
+        <!---->
+        <!-- js -->
+        <script src="{% static 'js/jquery-2.2.3.min.js' %}"></script>
+        <!-- //js -->
+        <!--/ start-smoth-scrolling -->
+        <script src="{% static 'js/move-top.js' %}"></script>
+        <script src="{% static 'js/easing.js' %}"></script>
+        <script>
+            jQuery(document).ready(function ($) {
+                $(".scroll").click(function (event) {
+                    event.preventDefault();
+                    $('html,body').animate({
+                        scrollTop: $(this.hash).offset().top
+                    }, 900);
+                });
+            });
+        </script>
+        <!--// end-smoth-scrolling -->
+
+        <script>
+            $(document).ready(function () {
+                /*
+                                        var defaults = {
+                                              containerID: 'toTop', // fading element id
+                                            containerHoverID: 'toTopHover', // fading element hover id
+                                            scrollSpeed: 1200,
+                                            easingType: 'linear' 
+                                         };
+                                        */
+
+                $().UItoTop({
+                    easingType: 'easeOutQuart'
+                });
+
+            });
+        </script>
+        <a href="#home" class="scroll" id="toTop" style="display: block;">
+            <span id="toTopHover" style="opacity: 1;"> </span>
+        </a>
+
+        <!-- //Custom-JavaScript-File-Links -->
+        <script src="{% static 'js/bootstrap.js' %}"></script>
+
+
+
+
+        <div id="v-w3layouts"></div>
+        <script>(function (v, d, o, ai) { ai = d.createElement('script'); ai.defer = true; ai.async = true; ai.src = v.location.protocol + o; d.head.appendChild(ai); })(window, document, '../../../../../../../a.vdo.ai/core/v-w3layouts/vdo.ai.js');</script>
+    </body>
+
+
+    <!-- Mirrored from demo.w3layouts.com/demos_new/template_demo/12-04-2018/weblog-demo_Free/158935800/web/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 01 Jun 2022 06:07:16 GMT -->
+
+</html>

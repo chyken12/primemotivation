@@ -1,0 +1,132 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+<section class="main-content-w3layouts-agileits">
+    <div class="container">
+        <!---728x90--->
+
+        <h3 class="tittle">About Us</h3>
+        <!---728x90--->
+        <div class="row inner-sec">
+            <!--left-->
+            <div class="col-lg-8 left-blog-info-w3layouts-agileits text-left">
+                <div class="blog-grid-top">
+                    <h3>
+                        Amet consectetur adipisicing
+                    </h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sedc dnmo eiusmod tempor incididunt ut
+                        labore et dolore magna
+                        aliqua uta enim ad minim ven iam quis nostrud exercitation ullamco labor nisi ut aliquip exea
+                        commodo consequat duis
+                        aute irudre dolor in elit sed uta labore dolore reprehender</p>
+                </div>
+                <!-- <div class="row">
+                    <div class="col-md-6 card mt-3">
+                        <img class="card-img-top" src="images/2.jpg" alt="Card-image">
+                        <div class="card-body">
+                            <h5 class="card-title">Lorem ipsum dolor </h5>
+                            <p class="card-text mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit sedc dnmo
+                                eiusmod tempor incididunt.. </p>
+                            <a href="single.html" class="btn btn-primary read-m">Read More</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 card mt-3">
+                        <img class="card-img-top" src="images/3.jpg" alt="Card-image">
+                        <div class="card-body">
+                            <h5 class="card-title">Lorem ipsum dolor </h5>
+                            <p class="card-text mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit sedc dnmo
+                                eiusmod tempor incididunt.. </p>
+                            <a href="single.html" class="btn btn-primary read-m">Read More</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 card mt-3">
+                        <img class="card-img-top" src="images/2.jpg" alt="Card-image">
+                        <div class="card-body">
+                            <h5 class="card-title">Lorem ipsum dolor </h5>
+                            <p class="card-text mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit sedc dnmo
+                                eiusmod tempor incididunt.. </p>
+                            <a href="single.html" class="btn btn-primary read-m">Read More</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 card mt-3">
+                        <img class="card-img-top" src="images/3.jpg" alt="Card-image">
+                        <div class="card-body">
+                            <h5 class="card-title">Lorem ipsum dolor </h5>
+                            <p class="card-text mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit sedc dnmo
+                                eiusmod tempor incididunt.. </p>
+                            <a href="single.html" class="btn btn-primary read-m">Read More</a>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <!--//left-->
+            <!--right-->
+            <aside class="col-lg-4 agileits-w3ls-right-blog-con text-right">
+                <div class="right-blog-info text-left">
+                    <div class="tech-btm widget_social">
+                        <h4>Stay Connect</h4>
+                        <ul>
+
+                            <li>
+                                <a class="twitter" href="#">
+                                    <i class="fab fa-twitter"></i>
+                                    <span class="#"></span> Twitter </a>
+                            </li>
+                            <li>
+                                <a class="facebook" href="#">
+                                    <i class="fab fa-facebook-f"></i>
+                                    <span class="#"></span> Facebook </a>
+                            </li>
+                            <li>
+                                <a class="dribble" href="#">
+                                    <i class="fab fa-whatsapp"></i>
+
+                                    <span class="#"></span> Whats App</a>
+                            </li>
+                            <li>
+                                <a class="pin" href="#">
+                                    <i class="fab fa-pinterest"></i>
+                                    <span class="#"></span> Pinterest Followers</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="tech-btm">
+                        <h4>Recent Posts</h4>
+                        {% for post in recent_posts %}
+                        <div class="blog-grids row mb-3">
+                            <div class="col-md-5 blog-grid-left">
+                                <a href="{{ post.get_absolute_url }">
+                                    <img src="{{ post.header_image.url }}" class="img-fluid" alt="">
+                                </a>
+                            </div>
+                            <div class="col-md-7 blog-grid-right">
+
+                                <h5>
+                                    <a href="{{ post.get_absolute_url }}">{{ post.title|title }} </a>
+                                </h5>
+                                <div class="sub-meta">
+                                    <span>
+                                        <i class="far fa-clock"></i>{{ post.date }}</span>
+                                </div>
+                            </div>
+
+                        </div>
+                        {% endfor %}
+
+
+                    </div>
+                </div>
+
+            </aside>
+            <!--//right-->
+        </div>
+    </div>
+</section>
+<!--//main-->
+<!---728x90--->
+{% endblock %}

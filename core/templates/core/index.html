@@ -1,0 +1,797 @@
+{% load static %}
+{% load embed_video_tags %}
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+
+<head>
+	<title>{% block title %}Prime Motivation | Home {% endblock %}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="" />
+
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<link href="{% static 'css/bootstrap.css' %}" rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="{% static 'css/jquery.desoslide.css' %}">
+	<link href="{% static 'css/style.css' %}" rel='stylesheet' type='text/css' />
+	<link href="{% static 'css/fontawesome-all.css' %}" rel="stylesheet">
+	<link
+		href="http://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
+		rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+	<link href="{% static 'images/favicon.png' %}" rel="icon">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+	<meta name="robots" content="noindex">
+	<style>
+		* {
+			box-sizing: border-box;
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+		}
+
+
+		#w3lDemoBar.w3l-demo-bar {
+			top: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 9999;
+			padding: 40px 5px;
+			padding-top: 70px;
+			margin-bottom: 70px;
+			background: #0D1326;
+			border-top-left-radius: 9px;
+			border-bottom-left-radius: 9px;
+		}
+
+		#w3lDemoBar.w3l-demo-bar a {
+			display: block;
+			color: #e6ebff;
+			text-decoration: none;
+			line-height: 24px;
+			opacity: .6;
+			margin-bottom: 20px;
+			text-align: center;
+		}
+
+		#w3lDemoBar.w3l-demo-bar span.w3l-icon {
+			display: block;
+		}
+
+		#w3lDemoBar.w3l-demo-bar a:hover {
+			opacity: 1;
+		}
+
+		#w3lDemoBar.w3l-demo-bar .w3l-icon svg {
+			color: #e6ebff;
+		}
+
+		#w3lDemoBar.w3l-demo-bar .responsive-icons {
+			margin-top: 30px;
+			border-top: 1px solid #41414d;
+			padding-top: 40px;
+		}
+
+		#w3lDemoBar.w3l-demo-bar .demo-btns {
+			border-top: 1px solid #41414d;
+			padding-top: 30px;
+		}
+
+		#w3lDemoBar.w3l-demo-bar .responsive-icons a span.fa {
+			font-size: 26px;
+		}
+
+		#w3lDemoBar.w3l-demo-bar .no-margin-bottom {
+			margin-bottom: 0;
+		}
+
+		.toggle-right-sidebar span {
+			background: #0D1326;
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			color: #e6ebff;
+			border-radius: 50px;
+			font-size: 26px;
+			cursor: pointer;
+			opacity: .5;
+		}
+
+		.pull-right {
+			float: right;
+			position: fixed;
+			right: 0px;
+			top: 70px;
+			width: 90px;
+			z-index: 99999;
+			text-align: center;
+		}
+
+		/* ============================================================
+RIGHT SIDEBAR SECTION
+============================================================ */
+
+		#right-sidebar {
+			width: 90px;
+			position: fixed;
+			height: 100%;
+			z-index: 1000;
+			right: 0px;
+			top: 0;
+			margin-top: 60px;
+			-webkit-transition: all .5s ease-in-out;
+			-moz-transition: all .5s ease-in-out;
+			-o-transition: all .5s ease-in-out;
+			transition: all .5s ease-in-out;
+			overflow-y: auto;
+		}
+
+
+		/* ============================================================
+RIGHT SIDEBAR TOGGLE SECTION
+============================================================ */
+
+		.hide-right-bar-notifications {
+			margin-right: -300px !important;
+			-webkit-transition: all .3s ease-in-out;
+			-moz-transition: all .3s ease-in-out;
+			-o-transition: all .3s ease-in-out;
+			transition: all .3s ease-in-out;
+		}
+
+
+
+		@media (max-width: 992px) {
+			#w3lDemoBar.w3l-demo-bar a.desktop-mode {
+				display: none;
+
+			}
+		}
+
+		@media (max-width: 767px) {
+			#w3lDemoBar.w3l-demo-bar a.tablet-mode {
+				display: none;
+
+			}
+		}
+
+		@media (max-width: 568px) {
+			#w3lDemoBar.w3l-demo-bar a.mobile-mode {
+				display: none;
+			}
+
+			#w3lDemoBar.w3l-demo-bar .responsive-icons {
+				margin-top: 0px;
+				border-top: none;
+				padding-top: 0px;
+			}
+
+			#right-sidebar,
+			.pull-right {
+				width: 90px;
+			}
+
+			#w3lDemoBar.w3l-demo-bar .no-margin-bottom-mobile {
+				margin-bottom: 0;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<!-- <div class="pull-right toggle-right-sidebar">
+<span class="fa title-open-right-sidebar tooltipstered fa-angle-double-right"></span>
+</div> -->
+
+	<div id="right-sidebar" class="right-sidebar-notifcations nav-collapse">
+		<div class="bs-example bs-example-tabs right-sidebar-tab-notification" data-example-id="togglable-tabs">
+		</div>
+		<div class="right-sidebar-panel-content animated fadeInRight" tabindex="5003"
+			style="overflow: hidden; outline: none;">
+		</div>
+	</div>
+
+	<!--Header-->
+
+	<header>
+		<div class="top-bar_sub_w3layouts container-fluid">
+			<div class="row">
+				<div class="col-md-4 logo text-left">
+					<a class="navbar-brand" href="{% url 'index' %}">
+						<i class="fab fa-linode"></i> Prime Motivation</a>
+				</div>
+				<div class="col-md-4 top-forms text-center mt-lg-3 mt-md-1 mt-0">
+					<span> <strong>Welcome Back!</strong> </span>
+				</div>
+				<div class="col-md-4 log-icons text-right">
+
+					<ul class="social_list1 mt-3">
+
+						<li>
+							<a href="#" class="facebook1 mx-2">
+								<i class="fab fa-facebook-f"></i>
+
+							</a>
+						</li>
+						<li>
+							<a href="#" class="twitter2">
+								<i class="fab fa-twitter"></i>
+
+							</a>
+						</li>
+						<li>
+							<a href="#" class="dribble3 mx-2">
+								<i class="fab fa-dribbble"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="pin">
+								<i class="fab fa-pinterest-p"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="header_top" id="home">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<button class="navbar-toggler navbar-toggler-right mx-auto" type="button" data-toggle="collapse"
+					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="{% url 'index' %}">Home
+								<span class="sr-only">(current)</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'about' %}">About</a>
+						</li>
+
+						<li class="nav-item dropdown">
+
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false">
+								Categories
+							</a>
+
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								{% for category in category_list %}
+								<a class="dropdown-item" href="{{ category.get_absolute_url }}">
+									{{ category.name|title }}
+								</a>
+								{% endfor %}
+							</div>
+
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'contact' %}">Contact</a>
+						</li>
+
+					</ul>
+					<div class="">
+						<form action="{% url 'index' %}" class="d-flex" role="search">
+							<input class="form-control me-2" type="search" name="search" placeholder="Search" aria-label="Search">
+							<button class="btn btn-outline-success" type="submit">Search</button>
+						</form>
+					</div>
+				</div>
+			</nav>
+
+		</div>
+	</header>
+	<!--//header-->
+
+	<!--/banner-->
+	<div class="banner">
+		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+			</ol>
+			{% for message in messages %}
+				<div class="alert alert-success">
+				<center><h3>{{ message }}</h3></center>	
+				</div>
+				{% endfor %}
+			<div class="carousel-inner" role="listbox">
+				
+				<div class="carousel-item active">
+					<div class="carousel-caption">
+						<h3>Create the lifestyle
+							<span>you desire</span>
+						</h3>
+						<div class="read">
+							<!-- <a href="single.html" class="btn btn-primary read-m">Read More</a> -->
+						</div>
+					</div>
+				</div>
+				
+				<div class="carousel-item item2">
+					<div class="carousel-caption">
+						<h3>Engaging Purposeful
+							<span>and Creative</span>
+						</h3>
+						<div class="read">
+							<!-- <a href="single.html" class="btn btn-primary read-m">Read More</a> -->
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item item3">
+					<div class="carousel-caption">
+						<h3>Create the lifestyle
+							<span>you desire</span>
+						</h3>
+						<div class="read">
+							<!-- <a href="single.html" class="btn btn-primary read-m">Read More</a> -->
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item item4">
+					<div class="carousel-caption">
+						<h3>Engaging Purposeful
+							<span>and Creative</span>
+						</h3>
+						<div class="read">
+							<!-- <a href="single.html" class="btn btn-primary read-m">Read More</a> -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<!-- <span class="sr-only">Previous</span> -->
+			</a>
+			<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<!-- <span class="sr-only">Next</span> -->
+			</a>
+		</div>
+	</div>
+	<!--/model-->
+	<!--//ba
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="embed-responsive embed-responsive-21by9">
+<iframe src="https://player.vimeo.com/video/145787219"></iframe>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+<!-728x90--->
+	<!--/main-->
+	<section class="main-content-w3layouts-agileits">
+		<div class="container">
+			<div class="row">
+				<!--left-->
+				<div class="col-lg-8 left-blog-info-w3layouts-agileits text-left">
+					<!--//silder-->
+					<div class="blog-girds-sec">
+						<div class="row">
+							{% for post in page_number %}
+							<div class="col-md-6 blog-grid-top">
+								<div class="b-grid-top">
+									<div class="blog_info_left_grid">
+										<a href="#">
+											<img src="{{ post.header_image.url }}" class="img-fluid" alt="">
+										</a>
+									</div>
+									<h3>
+										<a href="{{ post.get_absolute_url }}">{{ post.title|title }} </a>
+									</h3>
+									<p>{{ post.subject|truncatechars_html:150|safe }}</p>
+								</div>
+								<ul class="blog-icons">
+									<li>
+										<a href="#">
+											<i class="far fa-clock"></i> {{post.date}}</a>
+									</li>
+									<a href="#">
+										<i class="far fa-comment"></i>{{ forloop.counter }}</a>
+									</li>
+								</ul>
+							</div>
+							{% endfor %}
+
+						</div>
+					</div>
+				</div>
+				<!--//left-->
+				<!--right-->
+				<aside class="col-lg-4 agileits-w3ls-right-blog-con text-right">
+					<div class="right-blog-info text-left">
+						<div class="tech-btm">
+							<img src="{% static 'images/banner1.jpg' %}" class="img-fluid" alt="">
+						</div>
+						<div class="tech-btm">
+							<h4>Sign up to our newsletter</h4>
+							<form  method="post">
+								{% csrf_token %}
+							<div class="form-group">
+									<input type="email" name="email" placeholder="Enter Email" class="form-control" required>
+							</div>
+								<input type="submit" value="Subscribe">
+							</form>
+
+						</div>
+						<div class="tech-btm widget_social">
+							<h4>Stay Connect</h4>
+							<ul>
+
+								<li>
+									<a class="twitter" href="#">
+										<i class="fab fa-twitter"></i>
+										<span class="#"></span> Twitter </a>
+								</li>
+								<li>
+									<a class="facebook" href="#">
+										<i class="fab fa-facebook-f"></i>
+										<span class="#"></span> Facebook</a>
+								</li>
+								<li>
+									<a class="dribble" href="#">
+										<i class="fab fa-whatsapp"></i>
+
+										<span class=""></span> Whats App</a>
+								</li>
+								<li>
+									<a class="pin" href="#">
+										<i class="fab fa-pinterest"></i>
+										<span class=""></span> Pinterest</a>
+								</li>
+
+							</ul>
+						</div>
+						<div class="tech-btm">
+							<h4>Recent Posts</h4>
+							{% for post in recent_posts %}
+								<div class="blog-grids row mb-3">
+									<div class="col-md-5 blog-grid-left">
+										<a href="{{ post.get_absolute_url }">
+											<img src="{{ post.header_image.url }}" class="img-fluid" alt="">
+										</a>
+									</div>
+									<div class="col-md-7 blog-grid-right">
+
+										<h5>
+											<a href="{{ post.get_absolute_url }}">{{ post.title|title }} </a>
+										</h5>
+										<div class="sub-meta">
+											<span>
+												<i class="far fa-clock"></i>{{ post.date }}</span>
+										</div>
+									</div>
+
+								</div>
+							{% endfor %}
+				</aside>
+				<!--//right-->
+			</div>
+		</div>
+	</section>
+	<!--//main-->
+	<!--/middle-->
+	<div class="container">
+		<div class="row my-5">
+			<div class="col-md-7 offset-md-5">
+				<nav aria-label="...">
+					<ul class="pagination">
+						<li class="page-item ">
+							{% if page_number.has_previous %}
+								<a class="page-link" href="?page={{ page_number.previous_page_number }}">Previous</a>	
+							{% endif %}	
+						</li>
+						<li class="page-item"><a class="page-link" href="?page=1">1</a></li>
+						<li class="page-item " aria-current="page">
+							<a class="page-link" href="?page=2">2</a>
+						</li>
+						<li class="page-item"><a class="page-link" href="?page=3">3</a></li>
+						<li class="page-item">
+							{% if page_number.has_next %}
+								<a class="page-link" href="?page={{ page_number.next_page_number }}">Next</a>
+							{% endif %}
+						</li>
+					</ul>
+					</nav>
+		
+			</div>
+		</div>
+	</div>
+	<section class="middle-sec-agileinfo-w3ls">
+		<div class="container">
+			<div class="d-flex flex-wrap">
+				{% for item in chapters %}
+				<div class="row">
+					<div class="col-10 mx-auto mt-5 mt-5 text-center">
+						<div class="px-3 mb-5">
+							{% video item.url '426x240' %}
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+	<div class="container">
+		<div class="row my-5">
+			<div class="col-md-4 offset-md-4">
+				<nav aria-label="...">
+					<ul class="pagination">
+						<li class="page-item ">
+							{% if page_number.has_previous %}
+								<a class="page-link" href="?page={{ page_number.previous_page_number }}">Previous</a>	
+							{% endif %}	
+						</li>
+						<li class="page-item"><a class="page-link" href="?page=1">1</a></li>
+						<li class="page-item " aria-current="page">
+							<a class="page-link" href="?page=2">2</a>
+						</li>
+						<li class="page-item"><a class="page-link" href="?page=3">3</a></li>
+						<li class="page-item">
+							{% if page_number.has_next %}
+								<a class="page-link" href="?page={{ page_number.next_page_number }}">Next</a>
+							{% endif %}
+						</li>
+					</ul>
+					</nav>
+		
+			</div>
+		</div>
+	</div>
+
+
+	<!--footer-->
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 footer-grid-agileits-w3ls text-left">
+					<h3>About US</h3>
+					<p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. lacinia eget consectetur sed, convallis
+						at tellus..</p>
+					<div class="read">
+						<a href="single.html" class="btn btn-primary read-m">Read More</a>
+					</div>
+				</div>
+				<div class="col-lg-4 footer-grid-agileits-w3ls text-left">
+
+					<div class="tech-btm">
+						<h3>Latest Posts</h3>
+						{% for post in recent_posts %}
+						<div class="blog-grids row mb-3">
+							<div class="col-md-5 blog-grid-left">
+								<a href="{{ post.get_absolute_url }}">
+									<img src="{{ post.header_image.url }}" class="img-fluid" alt="">
+								</a>
+							</div>
+							<div class="col-md-7 blog-grid-right">
+
+								<h5>
+									<a href="{{ post.get_absolute_url }}">{{post.title|title}} </a>
+								</h5>
+								<div class="sub-meta">
+									<span>
+										<i class="far fa-clock"></i> {{post.date}}</span>
+								</div>
+							</div>
+
+						</div>
+						{% endfor %}
+
+
+
+					</div>
+				</div>
+				<!-- subscribe -->
+				<div class="col-lg-4 subscribe-main footer-grid-agileits-w3ls text-left">
+					<h2>Signup to our newsletter</h2>
+					<div class="subscribe-main text-left">
+						<div class="subscribe-form">
+							<form  method="post">
+									{% csrf_token %}
+								<div class="form-group">
+										<input type="email" name="email" placeholder="Enter Email" class="form-control" required>
+								</div>
+								<button type="submit" class="btn btn-primary submit">Subscribe</button>
+							</form>
+							<div class="clearfix"> </div>
+						</div>
+						<p>We respect your privacy.No spam ever!</p>
+					</div>
+					<!-- //subscribe -->
+				</div>
+			</div>
+			<!-- footer -->
+			<div class="footer-cpy text-center">
+				<div class="footer-social">
+					<div class="copyrighttop">
+						<ul>
+							<li class="mx-3">
+								<a class="facebook" href="#">
+									<i class="fab fa-facebook-f"></i>
+									<span>Facebook</span>
+								</a>
+							</li>
+							<li>
+								<a class="facebook" href="#">
+									<i class="fab fa-twitter"></i>
+									<span>Twitter</span>
+								</a>
+							</li>
+							<li class="mx-3">
+								<a class="facebook" href="#">
+									<i class="fab fa-google-plus-g"></i>
+									<span>Google+</span>
+								</a>
+							</li>
+							<li>
+								<a class="facebook" href="#">
+									<i class="fab fa-pinterest-p"></i>
+									<span>Pinterest</span>
+								</a>
+							</li>
+						</ul>
+
+					</div>
+				</div>
+				<div class="w3layouts-agile-copyrightbottom">
+					<p>© 2022 Prime Motivation. All Rights Reserved | Design by
+						<a href="#">SamSarp</a>
+					</p>
+
+				</div>
+			</div>
+
+			<!-- //footer -->
+		</div>
+	</footer>
+	<!---->
+	<!-- js -->
+	<script src="{% static 'js/jquery-2.2.3.min.js' %}"></script>
+	<!-- //js -->
+	<!-- desoslide-JavaScript -->
+	<script src="{% static 'js/jquery.desoslide.js' %}"></script>
+	<script>
+		$('#demo1_thumbs').desoSlide({
+			main: {
+				container: '#demo1_main_image',
+				cssClass: 'img-responsive'
+			},
+			effect: 'sideFade',
+			caption: true
+		});
+	</script>
+
+	<!-- requried-jsfiles-for owl -->
+	<script>
+		$(window).load(function () {
+			$("#flexiselDemo1").flexisel({
+				visibleItems: 3,
+				animationSpeed: 1000,
+				autoPlay: true,
+				autoPlaySpeed: 3000,
+				pauseOnHover: true,
+				enableResponsiveBreakpoints: true,
+				responsiveBreakpoints: {
+					portrait: {
+						changePoint: 480,
+						visibleItems: 1
+					},
+					landscape: {
+						changePoint: 640,
+						visibleItems: 2
+					},
+					tablet: {
+						changePoint: 768,
+						visibleItems: 3
+					}
+				}
+			});
+
+		});
+	</script>
+	<script>
+		$(window).load(function () {
+			$("#flexiselDemo2").flexisel({
+				visibleItems: 3,
+				animationSpeed: 1000,
+				autoPlay: true,
+				autoPlaySpeed: 3000,
+				pauseOnHover: true,
+				enableResponsiveBreakpoints: true,
+				responsiveBreakpoints: {
+					portrait: {
+						changePoint: 480,
+						visibleItems: 1
+					},
+					landscape: {
+						changePoint: 640,
+						visibleItems: 2
+					},
+					tablet: {
+						changePoint: 768,
+						visibleItems: 3
+					}
+				}
+			});
+
+		});
+	</script>
+	<script src="{% static 'js/jquery.flexisel.js' %}"></script>
+	<!-- //password-script -->
+	<!--/ start-smoth-scrolling -->
+	<script src="{% static 'js/move-top.js' %}"></script>
+	<script src="{% static 'js/easing.js' %}"></script>
+	<script>
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top
+				}, 900);
+			});
+		});
+	</script>
+	<!--// end-smoth-scrolling -->
+
+	<script>
+		$(document).ready(function () {
+
+			var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+			};
+
+
+			$().UItoTop({
+				easingType: 'easeOutQuart'
+			});
+
+		});
+	</script>
+	<a href="#home" class="scroll" id="toTop" style="display: block;">
+		<span id="toTopHover" style="opacity: 1;"> </span>
+	</a>
+
+	<!-- //Custom-JavaScript-File-Links -->
+	<script src="{% static 'js/bootstrap.js' %}"></script>
+
+
+
+
+	<div id="v-w3layouts"></div>
+	<script>(function (v, d, o, ai) { ai = d.createElement('script'); ai.defer = true; ai.async = true; ai.src = v.location.protocol + o; d.head.appendChild(ai); })(window, document, '#');</script>
+</body>
+
+
+</html>
