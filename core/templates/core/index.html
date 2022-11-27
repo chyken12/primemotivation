@@ -264,6 +264,7 @@ RIGHT SIDEBAR TOGGLE SECTION
 							<a class="nav-link" href="{% url 'about' %}">About</a>
 						</li>
 
+
 						<li class="nav-item dropdown">
 
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -415,10 +416,15 @@ RIGHT SIDEBAR TOGGLE SECTION
 										<a href="#">
 											<i class="far fa-clock"></i> {{post.date}}</a>
 									</li>
-									<a href="#">
-										<i class="far fa-comment"></i>{{ forloop.counter }}</a>
+									
+									<a href="{{ post.get_absolute_url }}">
+									{% with comments.count as total_comments %}
+											<i class="far fa-comment"></i> {{ total_comments }} comment{{ total_comments|pluralize }}</a>
+									{% endwith %}
 									</li>
-								</ul>
+									<li>
+									</li>
+									</ul>
 							</div>
 							{% endfor %}
 
