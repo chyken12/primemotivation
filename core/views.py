@@ -45,6 +45,7 @@ def index(request,category_slug=None):
         p = Paginator( Post.objects.all(), 8)
         page =request.GET.get('page')
         page_number = p.get_page(page)
+       
         
         paginator = Paginator(Video.objects.all(), 6)
         page = request.GET.get('page')
