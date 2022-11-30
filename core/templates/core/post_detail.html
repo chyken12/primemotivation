@@ -9,7 +9,7 @@
         <div class="blog_info_left_grid">
         </div>
         <h3>
-            <a href="single.html">{{ post.title|title }} </a>
+            <a href="{{ post.get_absolute_url }}">{{ post.title|title }} </a>
         </h3>
         <p>{{ post.content|safe }}</p>
 
