@@ -8,9 +8,4 @@ urlpatterns = [
     path('letters/', views.letters,name='letters'),
     path('<slug:post>/', views.detail_page, name='detail_page'),
     path('category/<category>/', views.CatListView.as_view(template_name='core/category.html'), name='category'),
-    
-
-
-       
-       
 ]
