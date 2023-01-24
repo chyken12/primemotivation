@@ -5,7 +5,6 @@ from django.db import models
 from django.forms import NullBooleanField
 from django.utils import timezone
 from django.contrib.auth.models import User
-from embed_video.fields import EmbedVideoField
 from django.urls import reverse
 from django.contrib.contenttypes.fields import GenericRelation
 
@@ -51,12 +50,12 @@ class Post(models.Model):
 
 
 
-class Video(models.Model):
-    subject =  models.CharField(max_length=150)
-    url = EmbedVideoField(max_length=140, blank=False, null=True)
+# class Video(models.Model):
+#     subject =  models.CharField(max_length=150)
+#     url = EmbedVideoField(max_length=140, blank=False, null=True)
 
-    def __str__(self):
-        return self.subject
+#     def __str__(self):
+#         return self.subject
     
     
 class Comment(models.Model):

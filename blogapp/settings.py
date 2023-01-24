@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'core',
     'crispy_forms',
     'django_pandas',
-    'gunicorn', 
+  
     
 
     
